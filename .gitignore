@@ -47,3 +47,10 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+/data
+/Epi NEMSIS references
+/HR
+/R/outputs
+/R/script/archive
+/write-ups
+/R/scripts/archive

@@ -1,0 +1,14 @@
+
+#------------------------------------------------------------------------------#
+# NEMSIS Epinephrine
+#
+# Author: Mohamed Albirair, MBBS, MPH, PhD
+# See README.md for information on usage and licensing
+#------------------------------------------------------------------------------#
+
+#------------------------------------------------------------------------------#
+# Settings file
+# Use this file to set settings for this project and avoid hard-coding paths
+#------------------------------------------------------------------------------#
+
+data_loc: "Stata files/Epi TCA dataset for advanced analysis - Mohamed.dta"
