@@ -5,10 +5,10 @@
 
 # Define your final model formula
 rosc_formula   <- as.formula("rosc   ~ epineph + age + sex + rythm + ems + mechanism + bt + defib")
-surv_formula   <- as.formula("surv   ~ epineph + age + sex + rythm + ems + mechanism + bt + defib")
+# surv_formula   <- as.formula("surv   ~ epineph + age + sex + rythm + ems + mechanism + bt + defib")
 miller_formula <- as.formula("miller ~ epineph + age + sex + rythm + ems + mechanism + bt + defib")
-peters_formula <- as.formula("peters ~ epineph + age + sex + rythm + ems + mechanism + bt + defib")
-witt_formula   <- as.formula("witt   ~ epineph + age + sex + rythm + ems + mechanism + bt + defib")
+# peters_formula <- as.formula("peters ~ epineph + age + sex + rythm + ems + mechanism + bt + defib")
+# witt_formula   <- as.formula("witt   ~ epineph + age + sex + rythm + ems + mechanism + bt + defib")
 
 ## ROSC
 rosc_cca   <- glm(rosc_formula,
@@ -67,6 +67,43 @@ miller_mi        <- map(.x = 1:20,
 class(miller_mi) <- "mira"
 miller_mi_pooled <- mice::pool(miller_mi)
 miller_mi_res    <- broom::tidy(miller_mi_pooled, conf.int = TRUE, exponentiate = TRUE)
+
+
+## Additional------------------------------------------------------------------#
+
+## ROSC, Blunt
+extract_imp_coef(formula_inpt = "rosc ~ epineph + age + sex + rythm + ems + bt + defib",
+                 imp_obj      = imputed_rosc_blunt)
+
+# ROSC, Penet
+extract_imp_coef(formula_inpt = "rosc ~ epineph + age + sex + rythm + ems + bt + defib",
+                 imp_obj      = imputed_rosc_penet)
+
+# ROSC, Peds
+extract_imp_coef(formula_inpt = "rosc ~ epineph + age + sex + rythm + ems + mechanism + bt + defib",
+                 imp_obj      = imputed_rosc_peds)
+
+# ROSC, Elderly
+extract_imp_coef(formula_inpt = "rosc ~ epineph + age + sex + rythm + ems + mechanism + bt + defib",
+                 imp_obj      = imputed_rosc_elder)
+
+#----------------------------------------#
+
+## Miller, Blunt
+extract_imp_coef(formula_inpt = "miller ~ epineph + age + sex + rythm + ems + bt + defib",
+                 imp_obj      = imputed_miller_blunt)
+
+# Miller, Penet
+extract_imp_coef(formula_inpt = "miller ~ epineph + age + sex + rythm + ems + bt + defib",
+                 imp_obj      = imputed_miller_penet)
+
+# Miller, Peds
+extract_imp_coef(formula_inpt = "miller ~ epineph + age + sex + rythm + ems + mechanism + bt + defib",
+                 imp_obj      = imputed_miller_peds)
+
+# Miller, Elderly
+extract_imp_coef(formula_inpt = "miller ~ epineph + age + sex + rythm + ems + mechanism + bt + defib",
+                 imp_obj      = imputed_miller_elder)
 
 
 ### Method 3: Pattern-mixture approach #########################################

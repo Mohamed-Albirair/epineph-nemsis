@@ -15,9 +15,9 @@ imputed_miller <- mice::mice(epi_tca_sbst %>% select(!c("rosc", "surv", "peters"
                              printFlag = FALSE)
 
 # save(imputed_rosc, imputed_miller,
-#      file = "../outputs/impted_outcomes.RData")
+#      file = "R/outputs/impted_outcomes.RData")
 
-load("../outputs/impted_outcomes.RData")
+load("R/outputs/impted_outcomes.RData")
 
 ## Data Subset Imputation------------------------------------------------------#
 
@@ -105,9 +105,9 @@ imputed_rosc_elder   <- mice::mice(
 #      imputed_miller_penet, imputed_rosc_penet,
 #      imputed_miller_peds,  imputed_rosc_peds,
 #      imputed_miller_elder, imputed_rosc_elder,
-#      file = "../outputs/impted_subsets.RData")
+#      file = "R/outputs/impted_subsets.RData")
 
-# load("../outputs/impted_subsets.RData")
+load("R/outputs/impted_subsets.RData")
 
 
 ### Sensitivity Analsysis: Pattern-Mixture Approach ############################
@@ -186,9 +186,9 @@ for(i in 1:10) {
 
 # save(comb_imputations_rosc,
 #      comb_imputations_miller,
-#      file = "../outputs/comb_imputations.RData")
+#      file = "R/outputs/comb_imputations.RData")
 
-# load("../outputs/comb_imputations.RData")
+# load("R/outputs/comb_imputations.RData")
 
 
 
