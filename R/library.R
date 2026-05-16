@@ -48,10 +48,6 @@ s$col_gradient <- c("#C55A38", "#DE6E4B", "#E48D69", "#EBAC87", "#F1CBA4", "#F7E
                     "#C5F9D7", "#A8E6CF", "#8BCCB8", "#6EB2A2", "#51988C",
                     "#347E76", "#1B645F", "#1B494F")
 
-# Scenario-defining parameters
-scen_def_param <- c("scen_id", "scen_lab", "cohort",
-                    "p_test", "p_adh", "f_test", "f_adh", "fucol_adh")
-
 ## Load functions/scripts from URLs
 #-----check if connected to the internet:
 # https://stackoverflow.com/questions/5076593/how-to-determine-if-you-have-an-internet-connection-in-r
