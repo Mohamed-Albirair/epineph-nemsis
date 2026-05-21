@@ -68,6 +68,14 @@ class(miller_mi) <- "mira"
 miller_mi_pooled <- mice::pool(miller_mi)
 miller_mi_res    <- broom::tidy(miller_mi_pooled, conf.int = TRUE, exponentiate = TRUE)
 
+# Using the dedicated compiled function
+## ROSC, Overall
+extract_imp_coef(formula_inpt = rosc_formula,
+                 imp_obj      = imputed_rosc)
+
+## Miller, Overall
+extract_imp_coef(formula_inpt = miller_formula,
+                 imp_obj      = imputed_miller)
 
 ## Additional------------------------------------------------------------------#
 

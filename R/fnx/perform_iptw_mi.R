@@ -37,13 +37,13 @@ perform_iptw_mi <- function(mids_obj,
             outcome_formula <- as.formula(paste(outcome_var, "~", treatment_var))
             weighted_model <- glm(outcome_formula,
                                   data = data_complete,
-                                  family = binomial(link = "log"), # poisson,
+                                  family = poisson(link = "log"), # poisson, # check: binomial
                                   weights = weight)
 
             # Get robust standard errors using sandwich estimator
-            library(sandwich)
-            library(lmtest)
-            robust_vcov <- sandwich::vcovHC(weighted_model, type = "HC3")
+            # library(sandwich)
+            # library(lmtest)
+            robust_vcov <- sandwich::vcovHC(weighted_model, type = "HC0")
             robust_se <- sqrt(diag(robust_vcov))
 
             # Store results with robust SE

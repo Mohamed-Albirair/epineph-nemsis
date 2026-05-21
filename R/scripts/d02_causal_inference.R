@@ -72,7 +72,7 @@ bind_rows(mget(ls()[grepl("_out", ls()) & !grepl("psm", ls())])) %>%
       mutate(subst = factor(subst, levels = c("blunt", "penet", "peds", "elder"))) %>%
       arrange(subst) %>%
       mutate(across(.cols = 3:5,
-                    .fns  = ~ round(., 2))) %>%
+                    .fns  = ~ round(., 4))) %>%
       pander::pander()
 
 
